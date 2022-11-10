@@ -1,15 +1,29 @@
 package auth
 
-type Client struct {
-	Url   string
-	Token string
+import (
+	"net/http"
+)
+
+type ClientGD struct {
+	Client      http.Client
+	BaseURL     string
+	EndpointURL string
+	Headers     map[string]string
+	Method      string
 }
 
-func CreateClient(token string, url string) (Client, error) {
-	c := Client{
-		Url:   url,
-		Token: token,
+func CreateClient(token string, baseUrl string) ClientGD {
+	client := http.Client{}
+	headers := map[string]string{
+		"Authorization": "Bearer " + token,
 	}
 
-	return c, nil
+	clientGD := ClientGD{
+		Client:  client,
+		BaseURL: baseUrl,
+		Headers: headers,
+		Method:  "GET",
+	}
+
+	return clientGD
 }
