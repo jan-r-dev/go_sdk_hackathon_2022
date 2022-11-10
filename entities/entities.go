@@ -1,4 +1,5 @@
 // Package entities is for working with the /api/entities GoodData API
+// Currently the package contains 3 GET and 3 POST functions. These functions should be generalised and ideally combined, but are currently separate.
 package entities
 
 import (
@@ -72,7 +73,7 @@ func MarshalEntityBody(entityType string, id string, attributes Attributes, rela
 	return bs
 }
 
-// /api/v1/entities/users is called with a GET method. Error is returned and should be handled alongside the *http.Response return.
+// /api/v1/entities/users called with a GET method. Error is returned and should be handled alongside the *http.Response return.
 func GetUsers(cgd core.ClientGD) (*http.Response, error) {
 	cgd.EndpointURL = "/api/v1/entities/users"
 	cgd.Method = "GET"
@@ -82,7 +83,7 @@ func GetUsers(cgd core.ClientGD) (*http.Response, error) {
 	return resp, err
 }
 
-// /api/v1/entities/workspaces is called with a GET method. Error is returned and should be handled alongside the *http.Response return.
+// /api/v1/entities/workspaces called with a GET method. Error is returned and should be handled alongside the *http.Response return.
 func GetWorkspaces(cgd core.ClientGD) (*http.Response, error) {
 	cgd.EndpointURL = "/api/v1/entities/workspaces"
 	cgd.Method = "GET"
@@ -93,7 +94,7 @@ func GetWorkspaces(cgd core.ClientGD) (*http.Response, error) {
 	return resp, err
 }
 
-// /api/v1/entities/userGroups is called with a GET method. Error is returned and should be handled alongside the *http.Response return.
+// /api/v1/entities/userGroups called with a GET method. Error is returned and should be handled alongside the *http.Response return.
 func GetUserGroups(cgd core.ClientGD) (*http.Response, error) {
 	cgd.EndpointURL = "/api/v1/entities/userGroups"
 	cgd.Method = "GET"
@@ -103,6 +104,7 @@ func GetUserGroups(cgd core.ClientGD) (*http.Response, error) {
 	return resp, err
 }
 
+// /api/v1/entities/users called with a POST method. A valid message body should be passed as a byte slice and composed according to Entity structs defined above.
 func PostUser(cgd core.ClientGD, bs []byte) (*http.Response, error) {
 	cgd.EndpointURL = "/api/v1/entities/users"
 	cgd.Method = "POST"
@@ -113,6 +115,7 @@ func PostUser(cgd core.ClientGD, bs []byte) (*http.Response, error) {
 	return resp, err
 }
 
+// /api/v1/entities/workspaces called with a POST method. A valid message body should be passed as a byte slice and composed according to Entity structs defined above.
 func PostWorkspace(cgd core.ClientGD, bs []byte) (*http.Response, error) {
 	cgd.EndpointURL = "/api/v1/entities/workspaces"
 	cgd.Method = "POST"
@@ -123,6 +126,7 @@ func PostWorkspace(cgd core.ClientGD, bs []byte) (*http.Response, error) {
 	return resp, err
 }
 
+// /api/v1/entities/userGroups called with a POST method. A valid message body should be passed as a byte slice and composed according to Entity structs defined above.
 func PostUserGroup(cgd core.ClientGD, bs []byte) (*http.Response, error) {
 	cgd.EndpointURL = "/api/v1/entities/userGroups"
 	cgd.Method = "POST"
