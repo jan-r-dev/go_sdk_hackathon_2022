@@ -1,0 +1,8 @@
+# This YAML file can be used to store the two key constants needed to work with GD Cloud's API.
+
+# This hostname is a sample hostname. The hostname you should use depends on where you access your organization from.
+hostname: https://example.trial.cloud.gooddata.com
+
+# The token below is just a randomly generated string of 112 characters intended to serve as an example (not a real token).
+# A real token must be acquired from your own GoodData organization via the Admin interface.
+token: 4WX1jUZGmWgsMogWK0ejQ91fGVo3LTaKtlyuyXiRukml1rBy3RW4qIHV9p3v7UKhxFxpBVdG0zFE0p7aZ2V9IhOW5OQWveNWSLzjTbN2v1zr0Nvr 
