@@ -10,6 +10,6 @@ This project is by no means in a finished state. It currently provides the core 
 * The examples folder contains code for sending an example GET and POST request with comments for clarity.
 
 ### Generating Go documentation
-Remember that Go natively allows users to generate documentation for the modules they are viewing. This is done by navigating to a folder where the module is contained and using the command below.
-`godoc -http=:8080`
-Afterwards, you access localhost:8080 and view the documentation.
+Remember that Go natively allows users to generate documentation for the modules they are viewing. This is done by navigating to a folder where the module is contained and using the command below.  
+`godoc -http=:8080`  
+Afterwards, you access localhost:8080 and view the documentation.  
