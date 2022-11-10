@@ -35,6 +35,7 @@ func main() {
 	// Loads the struct with JSON data. From this point, it is defined as a Go type and can be cleanly worked with.
 	entities.UnmarshalEntities(bs, &entity)
 
+	// Print the resulting entity into stdout for a quick display of the values.
 	for _, user := range entity.Entity {
 		fmt.Println(user.ID)
 		fmt.Println(user.Type)
